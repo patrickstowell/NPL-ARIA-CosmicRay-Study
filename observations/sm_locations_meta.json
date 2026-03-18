@@ -1,0 +1,46 @@
+{
+    "Description": "Locations of permanent instruments (Profile Probes and Theta Probes) at Marquardt study area",
+    
+    
+    "Provider": {
+      "Name": "Till Francke",
+      "Institution": "University of Potsdam, Environmental Sciences & Geography",
+      "Email": "francke@uni-potsdam.de",
+      "Comment": "generated 2.11.2022"
+    },
+
+ "SpaceTimeCoverage": {
+      "StartDate": "2019-09-01T00:00:00Z",
+      "EndDate": "2022-09-29T12:00:00Z",
+      "RegionName": "Marquardt Cluster (MqC)",
+      "BBox": "left: 12.9553, right: 12.9616, bottom: 52.4629, top: 52.4686"
+    },
+ 
+
+    "Citation": {
+      "Info": "These files are part of the dataset published along with the data paper mentioned below.",
+      "cite-as": "Heistermann, M., Francke, T., Scheiffele, L., Dimitrova Petrova, K., Budach, C., Schrön, M., Trost, B., Rasche, D.,  Güntner, A.,Döpper, V., Förster, M., Köhli, M., Angermann, L., Antonoglou, N., Zude-Sasse, M. and Oswald, S.: Three years of soil moisture observations by a dense cosmic-ray neutron sensing cluster at an agricultural research site in north-east Germany, Earth Syst. Sci. Data, https://doi.org/10.5194/essd-2023-19, 2023"
+    },
+    
+    "Source": {
+      "Name": "Cosmic Sense consortium",
+      "Institution": "",
+      "Email": "",
+      "LinkToOriginalSource": ""
+    },
+
+
+    "Source": {
+      "Name": "",
+      "Institution": "University of Potsdam"
+    },
+
+    "Units": "-",
+
+    "Further technical details": ["Sensor locations for the time series contained in epsilon_series.zip and theta_series.zip. The columns are explained in the following:",
+       "# location_ID: ID of sensor or profile location",
+       "device: type of instrument from the following: profile probe (PR2), theta probe (ThetaProbe ML2X, Delta-T), 5TE (Decagon), TDR probe (TDR100, Campell)",
+       "depth_cm: depth covered by sensor or profile",
+       "lat: latitude (decimal degree)",
+       "lon: longitude (decimal degree)"] 
+}

@@ -1,0 +1,51 @@
+{
+    "Description": "Daily volumetric soil water content (SWC) product retrieved from CRNS observations from 2019 to 2022 at the ATB research site in Marquardt, Germany",
+
+    "Citation": {
+      "Info": "These files are part of the dataset published along with the data paper mentioned below.",
+      "cite-as": "Heistermann, M., Francke, T., Scheiffele, L., Dimitrova Petrova, K., Budach, C., Schrön, M., Trost, B., Rasche, D.,  Güntner, A.,Döpper, V., Förster, M., Köhli, M., Angermann, L., Antonoglou, N., Zude-Sasse, M. and Oswald, S.: Three years of soil moisture observations by a dense cosmic-ray neutron sensing cluster at an agricultural research site in north-east Germany, Earth Syst. Sci. Data, https://doi.org/10.5194/essd-2023-19, 2023"
+    },
+
+    "Provider": {
+      "Name": "Maik Heistermann",
+      "Institution": "University of Potsdam, Environmental Sciences & Geography",
+      "Email": "maik.heistermann@uni-potsdam.de",
+      "Comment": ""
+    },
+
+    "SpaceTimeCoverage": {
+      "StartDate": "2019-08-01",
+      "EndDate": "2022-11-01",
+      "RegionName": "Marquardt, Germany",
+      "BBox": "left: 12.955023, right: 12.960573, bottom: 52.465114, top: 52.467584"
+    },
+    
+
+    "Source": {
+      "Name": "",
+      "Institution": "University of Potsdam"
+    },
+
+    "Units": "m3/m3",
+
+    "TemporalReferenceSystem": {
+      "TimeZone": "UTC",
+      "IntervalLength": "1 day",
+      "TimestampAtEndOfInterval": "False",
+      "IntervalAggregation": "average"
+    },
+
+    "Further technical details": ["This directory contains daily volumetric soil water content (SWC, file swc_product.txt) estimated from epithermal neutron intensities as observed by the CRNS sensors at the MqC study site. The underlying observations are provided in the directory ../observations/",
+      "DISCLAIMER: Beware that the estimation of SWC from neutron intensities involves an intricate procedure which includes various subjective decisions. Although we followed well established community standards, other users might come up with different results. This dataset should hence be considered as a convenience feature to allow users without any experience in CRNS data processing to work with SWC products resulting from CRNS observations.",
+      "Structure of the data file swc_product.txt: each column (except the column 'date') represents the daily average volumetric soil water content (in m3/m3) at a specific CRNS location. The attributes of each CRNS location (including the positions) are provided in the file `../observations/CRNS_locations.txt`.",
+      "BEWARE: There is a period of negative values of SWC in February 2021. This was a snow episode, and estimates of SWC were deliberately multiplied by -1 during this episode to flag them. This way, the user can decide whether to use these values (by taking the absolute value) or to discard the negative values.",
+      "In the following, we provide a very brief outline of the estimation procedure. Details of this procedure were comprehensively documented in the following paper: Heistermann, M., Francke, T., Schrön, M., and Oswald, S. E.: Spatio-temporal soil moisture retrieval at the catchment scale using a dense network of cosmic-ray neutron sensors, Hydrol. Earth Syst. Sci., 25, 4807–4824, https://doi.org/10.5194/hess-25-4807-2021, 2021.",
+      "(1) From the CRNS observations (../observations/), we used the column 'cph_filtered' as N (neutron intensity in cph).",
+      "(2) Standardisation of N using detector sensitivity (see Tab. 1 in the ESSD data paper), resulting to N_s",
+      "(3) Correction of N_s for the effects of incoming neutron intensity (using NMDB monitor JUNG), humidity, and barometric pressure (using the data from the climate station at MqC, see climate.zip in the published dataset), resulting to N_phi",
+      "(4) Compute weighted averages per CRNS footprint for each of the following variables: aboveground dry biomass (AGB, kg/m2), 'soil water equivalent' of soil organic matter (m3/m3) and lattice watter (m3/m3), soil bulk density (kg/m3), and volumetric soil water content (m3/m3) from the two ground truthing campaigns on 2019-11-07 and 2022-10-10.",
+      "(5) Correct N_phi for the effect of AGB in the footprint (based on Baatz et al. 2015), increasing it by 0.9 % per kg/m2 AGB, resulting to N_final.",
+      "(6) Estimate one single parameter N_0 in the Desilets equation (see equation 1 in Heistermann et al. 2021) based on the weighted average of volumetric SWC obtained in the groundtruthing campaigns (see step 4), by minimizing the Mean Absolute Error (MAE). The resulting MAE was 0.011 m3/m3.",
+      "(7) Compute the daily average of N_final for the entire MqC period.",
+      "(8) Apply the Desilet equation together with the estimated N_0 and the soil water equivalents from organic matter and lattice water, to obtain daily average SWC from the daily averages of N_final."]
+}

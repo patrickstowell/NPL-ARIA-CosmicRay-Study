@@ -1,0 +1,51 @@
+{
+    "Description": "Time series of permittivity at Marquardt study area, retrieved from Profile Probes and Theta Probes",
+    
+    "Provider": {
+      "Name": "Till Francke",
+      "Institution": "University of Potsdam, Environmental Sciences & Geography",
+      "Email": "francke@uni-potsdam.de",
+      "Comment": "generated 21.12.2022"
+      },
+
+ "SpaceTimeCoverage": {
+      "StartDate": "2019-09-01T00:00:00Z",
+      "EndDate": "2022-09-29T12:00:00Z",
+      "RegionName": "Marquardt Cluster (MqC)",
+      "BBox": "left: 12.9553, right: 12.9616, bottom: 52.4629, top: 52.4686"
+    },
+ 
+
+    "Citation": {
+      "Info": "These files are part of the dataset published along with the data paper mentioned below.",
+      "cite-as": "Heistermann, M., Francke, T., Scheiffele, L., Dimitrova Petrova, K., Budach, C., Schrön, M., Trost, B., Rasche, D.,  Güntner, A.,Döpper, V., Förster, M., Köhli, M., Angermann, L., Antonoglou, N., Zude-Sasse, M. and Oswald, S.: Three years of soil moisture observations by a dense cosmic-ray neutron sensing cluster at an agricultural research site in north-east Germany, Earth Syst. Sci. Data, https://doi.org/10.5194/essd-2023-19, 2023"
+    },
+    
+    "Source": {
+      "Name": "Cosmic Sense consortium",
+      "Institution": "",
+      "Email": "",
+      "LinkToOriginalSource": ""
+    },
+
+
+    "Source": {
+      "Name": "",
+      "Institution": "University of Potsdam"
+    },
+
+    "Units": "-",
+
+    "TemporalReferenceSystem": {
+      "TimeZone": "UTC",
+      "IntervalLength": "20 minutes",
+      "TimestampAtEndOfInterval": "False",
+      "IntervalAggregation": "instantaneous"
+    },
+
+    "Further technical details": ["Time series of permittivity (epsilon) measured with PR2-profile probes and ThetaProbes.",
+     "Sensor locations are contained in sm_locations.txt.",
+     "Raw data (recorded as epsilon, theta_default or voltage) was converted back to voltage and corrected using  two-point sensor-specific-calibrations. The resulting corrected voltage was then converted to epsilon using manufacturer's specifications (#Mq_profile).",
+     "The column names hold the depth of the respective sensors below ground in cm. For example, column eps40 would indicate the permittivity (epsilon) values at a depth of 50 cm.",
+     "The permittivity measured with TDR100 probes was not calibrated using a sensor-specific-calibration. Instead, the manufacturers' calibration was used."] 
+}

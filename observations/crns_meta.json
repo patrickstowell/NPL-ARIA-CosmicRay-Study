@@ -1,0 +1,59 @@
+{
+    "Description": "Time series recorded by the stationary (i.e. non-roving) CRNS sensors from 2019 to 2022 at the ATB research site in Marquardt, Germany",
+
+    "Citation": {
+      "Info": "These files are part of the dataset published along with the data paper mentioned below.",
+      "cite-as": "Heistermann, M., Francke, T., Scheiffele, L., Dimitrova Petrova, K., Budach, C., Schrön, M., Trost, B., Rasche, D.,  Güntner, A.,Döpper, V., Förster, M., Köhli, M., Angermann, L., Antonoglou, N., Zude-Sasse, M. and Oswald, S.: Three years of soil moisture observations by a dense cosmic-ray neutron sensing cluster at an agricultural research site in north-east Germany, Earth Syst. Sci. Data, https://doi.org/10.5194/essd-2023-19, 2023"
+    },
+
+    "Provider": {
+      "Name": "Maik Heistermann",
+      "Institution": "University of Potsdam, Environmental Sciences & Geography",
+      "Email": "maik.heistermann@uni-potsdam.de",
+      "Comment": ""
+    },
+
+    "SpaceTimeCoverage": {
+      "StartDate": "2019-08-01",
+      "EndDate": "2022-11-01",
+      "RegionName": "Marquardt, Germany",
+      "BBox": "left: 12.955023, right: 12.960573, bottom: 52.465114, top: 52.467584"
+    },
+    
+    "Citation": {
+      "Info": "These files are part of the dataset published along with the data paper mentioned below.",
+      "cite-as": "Heistermann, M., Francke, T., Scheiffele, L., Dimitrova Petrova, K., Budach, C., Schrön, M., Trost, B., Rasche, D.,  Güntner, A.,Döpper, V., Förster, M., Köhli, M., Angermann, L., Antonoglou, N., Zude-Sasse, M. and Oswald, S.: Three years of soil moisture observations by a dense cosmic-ray neutron sensing cluster at an agricultural research site in north-east Germany, Earth Syst. Sci. Data, https://doi.org/10.5194/essd-2023-19, 2023"
+    },
+
+    "Source": {
+      "Name": "",
+      "Institution": "University of Potsdam"
+    },
+
+    "Units": "-",
+
+    "TemporalReferenceSystem": {
+      "TimeZone": "UTC",
+      "IntervalLength": "20 minutes",
+      "TimestampAtEndOfInterval": "True",
+      "IntervalAggregation": "sum or average"
+    },
+
+    "Further technical details": ["Each CRNS sensor unit has an integer ID. The attributes of each CRNS sensor unit are provided in the file `crns_attributes.txt` in this directory. Sensor locations have been surveyed using dGPS. The recorded times-series data are contained in the files `crns_data_{ID}.txt`. The columns of these data files, i.e. the recorded variables, are documented in the following (please note that not all column names are contained in all data files):",
+    "# datetime: Date and time string in ISO 8601 format, marking the end of integration interval, in UTC",
+    "# press1: Internal barometric pressure (measured on logger circuit board/ in the logger box), in hPa, usually logged as 'P1_mb' for Quaesta/Hydroinnnova loggers",
+    "# temp1: Air temperature (measured on logger circuit board/ in the logger box), in deg Celsius, usually logged as 'T1_C' for Quaesta/Hydroinnnova loggers",
+    "# relhum1: Relative humidity (measured on logger circuit board/ in the logger box), in percent, usually logged as 'RH1' for Quaesta/Hydroinnnova loggers",
+    "# volt: Battery voltage, in volts",
+    "# counts1: Number of epithermal neutron counts (moderated counter), unitless, usually logged as 'N1Cts' for Quaesta/Hydroinnnova loggers",
+    "# nsecs1: Integration interval for counts1, in seconds, usually logged as 'N1ET_sec' for Quaesta/Hydroinnnova loggers",
+    "# counts2: Number of epithermal neutron counts if a second moderated counter is present, unitless",
+    "# nsecs2: Integration interval for counts2, in seconds",
+    "# counts_bare: Number of thermal neutron counts (bare counter), unitless",
+    "# nsecs_bare: Integration interval for counts1, in seconds",
+    "# press4: Additional external sensor for barometric pressure, in hPa, usually logged as 'P4_mb' for Quaesta/Hydroinnnova loggers",
+    "# temp_ext: External temperature, in degree Celsius, usually logged as 'T_CS215' for Quaesta/Hydroinnnova loggers",
+    "# relhum_ext: External relative humidity, in percent, usually logged as 'RH_CS215' for Quaesta/Hydroinnnova loggers",
+    "# abshum_ext: External absolute humidity, in g/m3, only logged for StyX sensor",
+    "# cph_filtered: Computed (not logged!) total epithermal neutron count rate, in counts per hour (cph); for all probes this variable was computed from the moderated neutron counts N (sum from moderated tubes, counts1 and, if available, counts2) as 3600 * N / nsecs1; please note that this variable is an add-on to the original dataset, as it was not recorded by the sensors, but computed in post-processing. In order to make usage easier, we already marked count rates as 'nan' which are -- based on subjective judgement -- considered implausible, corrupt, or uncertain. This filtering process is based on two criteria: (1) marking obvious outliers which are identified by minimum and maximum plausible thresholds of count rates which again depend on detector sensitivity, and by marking count rates outside a moving window median buffer window; (2) marking count rates that are based on interval lengths that are equal or less than 100 seconds."]
+}
